@@ -1,0 +1,87 @@
+.home {
+  h1 {
+    font-size: 3.5rem;
+    text-align: center;
+    text-transform: capitalize;
+    color: white;
+    padding: 100px 100px;
+  }
+
+  .fa-shopping-bag {
+    padding-top: 5px;
+    font-size: 4rem;
+    color: white;
+    text-align: center;
+  }
+
+  .fa-clock {
+    color: white;
+  }
+  .links {
+    background: rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+    margin-bottom: 70px;
+    .categories {
+      .title {
+        font-size: 1.3rem;
+        color: white;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+      .group-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        .link {
+          font-size: 0.8rem;
+          color: white;
+          font-weight: 300;
+          margin-bottom: 0.5rem;
+          text-decoration: none;
+          &:hover {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+  .trending {
+    max-width: 800px;
+    margin: 0 auto;
+    .search {
+      width: 100%;
+      font-size: 1.4rem;
+      border-radius: 5px;
+      border: 0.7px solid black;
+      padding: 10px;
+    }
+
+    .title {
+      font-size: 1rem;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+
+    .trending-tags {
+      text-align: center;
+      .tag {
+        padding: 10px 20px;
+        border-radius: 45px;
+        border: 1px solid white;
+        display: inline-block;
+        color: white;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        &:hover {
+          background-color: white;
+          color: black;
+        }
+      }
+    }
+  }
+}
