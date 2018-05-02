@@ -28,7 +28,7 @@ var _Home = __webpack_require__(146);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _reactRouterDom = __webpack_require__(272);
+var _reactRouterDom = __webpack_require__(274);
 
 var _Listings = __webpack_require__(147);
 
@@ -289,7 +289,13 @@ var _axios = __webpack_require__(41);
 
 var _axios2 = _interopRequireDefault(_axios);
 
+var _queryString = __webpack_require__(186);
+
+var _queryString2 = _interopRequireDefault(_queryString);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -309,7 +315,7 @@ var Category = function (_Component) {
       return _this.state.itemsData.map(function (item, i) {
         return _react2.default.createElement(
           "div",
-          { className: "item" },
+          { className: "item", key: i },
           _react2.default.createElement(
             "div",
             {
@@ -365,11 +371,16 @@ var Category = function (_Component) {
             ),
             _react2.default.createElement(
               "select",
-              { name: "make", className: "make" },
+              { name: "make", className: "make", onChange: _this.handleChange },
               _react2.default.createElement(
                 "option",
                 { value: "bmw" },
                 "bmw"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "audi" },
+                "audi"
               )
             )
           ),
@@ -383,11 +394,16 @@ var Category = function (_Component) {
             ),
             _react2.default.createElement(
               "select",
-              { name: "model", className: "model" },
+              { name: "model", className: "model", onChange: _this.handleChange },
               _react2.default.createElement(
                 "option",
                 { value: "2008" },
                 "2008"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "2007" },
+                "2007"
               )
             )
           )
@@ -395,8 +411,39 @@ var Category = function (_Component) {
       }
     };
 
+    _this.handleChange = function (event) {
+      var name = event.target.name;
+      var value = event.target.type == "checkbox" ? event.target.checked : event.target.value;
+
+      _this.setState(_defineProperty({}, name, value), function () {
+        console.log(_this.state);
+      });
+    };
+
+    _this.submitFilters = function () {
+      var self = _this;
+      var _this$props2 = _this.props,
+          match = _this$props2.match,
+          location = _this$props2.location,
+          history = _this$props2.history;
+      var _this$state = _this.state,
+          min_price = _this$state.min_price,
+          max_price = _this$state.max_price,
+          sort = _this$state.sort,
+          select_view = _this$state.select_view;
+
+      history.push("/" + match.params.city + "/" + match.params.category + "?min_price=" + min_price + "&max_price=" + max_price + "&sort=" + sort + "&select_view=" + select_view);
+
+      document.location.href = "/" + match.params.city + "/" + match.params.category + "?min_price=" + min_price + "&max_price=" + max_price + "&sort=" + sort + "&select_view=" + select_view;
+      var queryParams = _queryString2.default.parse(_this.props.location.search);
+    };
+
     _this.state = {
-      itemsData: []
+      itemsData: [],
+      min_price: 0,
+      max_price: 10000,
+      sort: "Newest",
+      select_view: "Gallery View"
     };
     return _this;
   }
@@ -404,20 +451,39 @@ var Category = function (_Component) {
   _createClass(Category, [{
     key: "componentWillMount",
     value: function componentWillMount() {
-      var self = this;
       var _props = this.props,
           match = _props.match,
           history = _props.history;
 
-      _axios2.default.get("/api/" + match.params.city + "/" + match.params.category).then(function (response) {
-        self.setState({
-          itemsData: response.data
-        }, function () {
-          console.log(self.itemsData);
+      var self = this;
+
+      var queryParams = _queryString2.default.parse(this.props.location.search);
+      var min_price = queryParams.min_price,
+          max_price = queryParams.max_price,
+          sort = queryParams.sort,
+          select_view = queryParams.select_view;
+
+      if (queryParams.min_price != undefined) {
+        _axios2.default.get("/api/" + match.params.city + "/" + match.params.category + "?min_price=" + min_price + "&max_price=" + max_price + "&sort=" + sort + "&select_view=" + select_view).then(function (response) {
+          self.setState({
+            itemsData: response.data
+          }, function () {
+            console.log(self.itemsData);
+          });
+        }).catch(function (error) {
+          console.log(error);
         });
-      }).catch(function (error) {
-        console.log(error);
-      });
+      } else {
+        _axios2.default.get("/api/" + match.params.city + "/" + match.params.category).then(function (response) {
+          self.setState({
+            itemsData: response.data
+          }, function () {
+            console.log(self.itemsData);
+          });
+        }).catch(function (error) {
+          console.log(error);
+        });
+      }
     }
   }, {
     key: "render",
@@ -446,23 +512,68 @@ var Category = function (_Component) {
               ),
               _react2.default.createElement(
                 "div",
-                { className: "min-max" },
+                { className: "min_max" },
                 _react2.default.createElement(
                   "select",
-                  { name: "min-price", className: "min" },
+                  {
+                    name: "min_price",
+                    className: "min",
+                    onChange: this.handleChange,
+                    value: this.state.min_price
+                  },
                   _react2.default.createElement(
                     "option",
                     { value: "0" },
                     "0"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "5000" },
+                    "5000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "10000" },
+                    "10000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "20000" },
+                    "20000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "30000" },
+                    "30000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "45000" },
+                    "45000"
                   )
                 ),
                 _react2.default.createElement(
                   "select",
-                  { name: "max-price", className: "max" },
+                  {
+                    name: "max_price",
+                    className: "max",
+                    onChange: this.handleChange,
+                    value: this.state.max_price
+                  },
                   _react2.default.createElement(
                     "option",
                     { value: "10000" },
-                    "10,000"
+                    "10000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "20000" },
+                    "20000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "45000" },
+                    "45000"
                   )
                 )
               )
@@ -473,7 +584,7 @@ var Category = function (_Component) {
               { className: "form-group button" },
               _react2.default.createElement(
                 "div",
-                { className: "primary-btn" },
+                { className: "primary-btn", onClick: this.submitFilters },
                 "Update"
               ),
               _react2.default.createElement(
@@ -501,7 +612,12 @@ var Category = function (_Component) {
                   { className: "form-group view-dropdown" },
                   _react2.default.createElement(
                     "select",
-                    { name: "select-view", className: "select-view" },
+                    {
+                      name: "select_view",
+                      className: "select-view",
+                      onChange: this.handleChange,
+                      value: this.state.select_view
+                    },
                     _react2.default.createElement(
                       "option",
                       { value: "gallery" },
@@ -524,7 +640,12 @@ var Category = function (_Component) {
                   { className: "form-group sort-dropdown" },
                   _react2.default.createElement(
                     "select",
-                    { name: "sort-dropdown", className: "sort-dropdown" },
+                    {
+                      name: "sort-dropdown",
+                      className: "sort",
+                      onChange: this.handleChange,
+                      value: this.state.sort
+                    },
                     _react2.default.createElement(
                       "option",
                       { value: "newest" },

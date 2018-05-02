@@ -126,8 +126,8 @@ module.exports = [
         slug: "atv-or-utv-sno"
       },
       {
-        name: "auto parts",
-        slug: "auto-parts"
+        name: "cars & trucks",
+        slug: "cars-and-trucks"
       },
       {
         name: "aviation",

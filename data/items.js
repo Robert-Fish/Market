@@ -4,7 +4,7 @@ module.exports = [
     listing: "cars-and-trucks",
     city: "brisbane",
     category: "for-sale",
-    price: "$45,000",
+    price: 45000,
     extraDetails: {
       vin: "93023210382103",
       miles: "85000",
@@ -25,7 +25,7 @@ module.exports = [
     listing: "cars-and-trucks",
     city: "brisbane",
     category: "for-sale",
-    price: "$14,490",
+    price: 14490,
     extraDetails: {
       vin: "93023210382103",
       miles: "85000",
@@ -46,7 +46,7 @@ module.exports = [
     listing: "cars-and-trucks",
     city: "brisbane",
     category: "for-sale",
-    price: "$15,000",
+    price: 15000,
     extraDetails: {
       vin: "93023210382103",
       miles: "85000",
