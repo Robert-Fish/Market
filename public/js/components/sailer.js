@@ -830,7 +830,7 @@ var Home = function (_Component) {
               return _react2.default.createElement(
                 "a",
                 {
-                  href: category.title + "/" + listing.slug,
+                  href: "/" + match.params.city + "/" + category.title + "/" + listing.slug,
                   className: "link",
                   key: index
                 },

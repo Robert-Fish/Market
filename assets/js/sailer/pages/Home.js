@@ -38,7 +38,7 @@ export default class Home extends Component {
           return category.listings.map((listing, index) => {
             return (
               <a
-                href={`${category.title}/${listing.slug}`}
+                href={`/${match.params.city}/${category.title}/${listing.slug}`}
                 className="link"
                 key={index}
               >
