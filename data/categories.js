@@ -1,6 +1,6 @@
 module.exports = [
   {
-    title: "Community",
+    title: "community",
     listings: [
       {
         name: "activities",
@@ -37,7 +37,7 @@ module.exports = [
     ]
   },
   {
-    title: "Housing",
+    title: "housing",
     listings: [
       {
         name: "apts / housing",
@@ -74,7 +74,7 @@ module.exports = [
     ]
   },
   {
-    title: "Services",
+    title: "services",
     listings: [
       {
         name: "automotive",
@@ -111,7 +111,7 @@ module.exports = [
     ]
   },
   {
-    title: "For-Sale",
+    title: "for-sale",
     listings: [
       {
         name: "antiques",
@@ -148,7 +148,7 @@ module.exports = [
     ]
   },
   {
-    title: "Gigs",
+    title: "gigs",
     listings: [
       {
         name: "computer",
@@ -185,7 +185,7 @@ module.exports = [
     ]
   },
   {
-    title: "Personal",
+    title: "personal",
     listings: [
       {
         name: "strictly platonic",
@@ -218,7 +218,7 @@ module.exports = [
     ]
   },
   {
-    title: "Jobs",
+    title: "jobs",
     listings: [
       {
         name: "accounting  &  finance",

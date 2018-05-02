@@ -7,18 +7,23 @@ export default class Home extends Component {
       categoriesData: ""
     };
   }
-  componentWillMount() {
+  componentWillMount() {}
+
+  componentDidMount() {
+    const { match, history } = this.props;
+    if (match.params.city == undefined) {
+      history.push("/brisbane");
+    }
+
     const self = this;
     axios
-      .get("/api/categories")
+      .get(`/api/${match.params.city}`)
       .then(function(response) {
         self.setState(
           {
             categoriesData: response.data
           },
-          () => {
-            console.log(self.state);
-          }
+          () => {}
         );
       })
       .catch(function(error) {
@@ -26,6 +31,7 @@ export default class Home extends Component {
       });
   }
   loopCategories = () => {
+    const { match, history } = this.props;
     if (this.state.categoriesData != "") {
       return this.state.categoriesData.map((category, i) => {
         const loopListings = () => {
@@ -43,7 +49,12 @@ export default class Home extends Component {
         };
         return (
           <div className="categories" key={i}>
-            <div className="title">{category.title}</div>
+            <a
+              href={`/${match.params.city}/${category.title}`}
+              className="title"
+            >
+              {category.title}
+            </a>
             <div
               className={`group-links ${
                 category.title == "Jobs" ||
@@ -88,7 +99,7 @@ export default class Home extends Component {
               type="text"
               name="search"
               className="search"
-              placeholder="Search ..."
+              placeholder="Search..."
             />
             <div className="title">
               Trending now <i className="far fa-clock" />

@@ -8,7 +8,7 @@
   }
 
   .fa-shopping-bag {
-    padding-top: 5px;
+    padding: 15px;
     font-size: 4rem;
     color: white;
     text-align: center;
@@ -26,10 +26,12 @@
     margin-bottom: 70px;
     .categories {
       .title {
+        display: block;
         font-size: 1.3rem;
         color: white;
         margin-bottom: 1rem;
         font-weight: 700;
+        text-decoration: none;
       }
       .group-links {
         display: grid;
@@ -39,14 +41,15 @@
           grid-template-columns: repeat(1, 1fr);
         }
         .link {
-          font-size: 0.8rem;
+          font-size: 0.9rem;
           color: white;
           font-weight: 300;
           margin-bottom: 0.5rem;
           text-decoration: none;
           transition: all ease-in-out 0.2s;
+          line-height: 1.2;
           &:hover {
-            color: red;
+            color: rgba(75, 177, 182, 0.7);
           }
         }
       }

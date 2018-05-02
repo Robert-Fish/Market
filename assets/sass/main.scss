@@ -11,11 +11,11 @@
 body {
   font-family: "Roboto", sans-serif;
   background-image: linear-gradient(
-      90deg,
-      rgba(210, 64, 116, 0.7) 0%,
-      rgba(18, 104, 195, 0.7) 100%
+      135deg,
+      rgba(75, 177, 182, 0.7) 0%,
+      rgba(102, 25, 179, 0.7) 100%
     ),
-    url("https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?cs=srgb&dl=aerial-architectural-design-architecture-373912.jpg&fm=jpg");
+    url("https://suitcasemag.com/wp-content/uploads/2017/01/brisbane-australia.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -38,7 +38,7 @@ header {
       color: white;
       font-weight: 300;
     }
-    .city {
+    .city-dropdown {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -46,6 +46,39 @@ header {
       padding: 15px 20px;
       color: white;
       font-weight: 200;
+      position: relative;
+      cursor: pointer;
+
+      .scroll-area {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.5);
+        top: 35px;
+        min-width: 150px;
+        left: 0;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+        z-index: 5;
+
+        &.active {
+          visibility: visible;
+          top: 50px;
+          opacity: 1;
+        }
+        // padding: 15px;
+        ul {
+          li {
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+              background: rgba(75, 177, 182, 0.5);
+            }
+          }
+        }
+      }
 
       i {
         padding-left: 5px;
@@ -61,6 +94,12 @@ header {
       display: flex;
       font-size: 1.75rem;
       color: white;
+
+      .fa-user-circle {
+        font-size: 2.35rem;
+        padding: 0;
+        margin: -1px 0 0 0;
+      }
     }
 
     .user-dropdown {
@@ -76,11 +115,13 @@ header {
     }
 
     .post-btn {
-      padding: 15px 20px;
+      margin-top: 3px;
+      padding: 15px 30px;
       background: black;
       font-weight: 300;
       color: white;
       text-transform: capitalize;
+      vertical-align: center;
     }
   }
 }
