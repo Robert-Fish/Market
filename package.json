@@ -48,7 +48,7 @@
     "sass": "gulp styles",
     "js": "gulp webpack",
     "server": "node server.js",
-    "deploy": "concurrently --kill-others \"npm run bundle\" \"npm run server\""
+    "deploy": "concurrently \"npm run bundle\" \"npm run server\""
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
