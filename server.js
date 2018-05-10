@@ -61,7 +61,7 @@ app.get("*", function(req, res) {
 });
 
 // create default port to serve app
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 app.listen(port);
 
 console.log("server started on port " + port);
