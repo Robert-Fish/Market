@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 124:
+/***/ 125:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20,25 +20,25 @@ var _reactDom = __webpack_require__(31);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _Header = __webpack_require__(143);
+var _Header = __webpack_require__(144);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _Home = __webpack_require__(146);
+var _Home = __webpack_require__(147);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _reactRouterDom = __webpack_require__(274);
+var _reactRouterDom = __webpack_require__(66);
 
-var _Listings = __webpack_require__(147);
+var _Listings = __webpack_require__(148);
 
 var _Listings2 = _interopRequireDefault(_Listings);
 
-var _Details = __webpack_require__(145);
+var _Details = __webpack_require__(146);
 
 var _Details2 = _interopRequireDefault(_Details);
 
-var _Category = __webpack_require__(144);
+var _Category = __webpack_require__(145);
 
 var _Category2 = _interopRequireDefault(_Category);
 
@@ -103,7 +103,7 @@ exports.default = App;
 
 /***/ }),
 
-/***/ 143:
+/***/ 144:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -122,6 +122,8 @@ var _react2 = _interopRequireDefault(_react);
 var _axios = __webpack_require__(41);
 
 var _axios2 = _interopRequireDefault(_axios);
+
+var _reactRouterDom = __webpack_require__(66);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -202,6 +204,10 @@ var Header = function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _props = this.props,
+          match = _props.match,
+          history = _props.history;
+
       return _react2.default.createElement(
         "div",
         { className: "container" },
@@ -212,8 +218,8 @@ var Header = function (_Component) {
             "div",
             { className: "left-menu" },
             _react2.default.createElement(
-              "div",
-              { className: "logo" },
+              _reactRouterDom.Link,
+              { to: "/" + match.params.city, className: "logo" },
               "Market"
             ),
             _react2.default.createElement(
@@ -269,7 +275,7 @@ exports.default = Header;
 
 /***/ }),
 
-/***/ 144:
+/***/ 145:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -289,7 +295,7 @@ var _axios = __webpack_require__(41);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _queryString = __webpack_require__(186);
+var _queryString = __webpack_require__(187);
 
 var _queryString2 = _interopRequireDefault(_queryString);
 
@@ -678,7 +684,7 @@ exports.default = Category;
 
 /***/ }),
 
-/***/ 145:
+/***/ 146:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -694,7 +700,7 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Gallery = __webpack_require__(148);
+var _Gallery = __webpack_require__(149);
 
 var _Gallery2 = _interopRequireDefault(_Gallery);
 
@@ -903,7 +909,7 @@ exports.default = Details;
 
 /***/ }),
 
-/***/ 146:
+/***/ 147:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -922,6 +928,8 @@ var _react2 = _interopRequireDefault(_react);
 var _axios = __webpack_require__(41);
 
 var _axios2 = _interopRequireDefault(_axios);
+
+var _reactRouterDom = __webpack_require__(66);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -949,10 +957,9 @@ var Home = function (_Component) {
           var loopListings = function loopListings() {
             return category.listings.map(function (listing, index) {
               return _react2.default.createElement(
-                "a",
+                _reactRouterDom.Link,
                 {
-                  href: "/" + match.params.city + "/" + category.title + "/" + listing.slug,
-                  className: "link",
+                  to: "/" + match.params.city + "/" + category.title + "/" + listing.slug,
                   key: index
                 },
                 listing.name
@@ -1080,7 +1087,7 @@ exports.default = Home;
 
 /***/ }),
 
-/***/ 147:
+/***/ 148:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1327,7 +1334,7 @@ exports.default = Listings;
 
 /***/ }),
 
-/***/ 148:
+/***/ 149:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1462,7 +1469,7 @@ exports.default = Gallery;
 
 /***/ }),
 
-/***/ 149:
+/***/ 150:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1476,7 +1483,7 @@ var _reactDom = __webpack_require__(31);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _App = __webpack_require__(124);
+var _App = __webpack_require__(125);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -1488,4 +1495,4 @@ _reactDom2.default.render(_react2.default.createElement(_App2.default, null), ap
 
 /***/ })
 
-},[149]);
+},[150]);

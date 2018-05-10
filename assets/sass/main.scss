@@ -37,6 +37,11 @@ header {
       display: flex;
       color: white;
       font-weight: 300;
+      text-decoration: none;
+      transition: all ease-in-out 0.3s;
+      &:hover {
+        color: rgb(102, 25, 179);
+      }
     }
     .city-dropdown {
       display: flex;

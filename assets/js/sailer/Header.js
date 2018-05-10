@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 export default class Header extends Component {
   constructor() {
     super();
@@ -62,11 +63,14 @@ export default class Header extends Component {
     });
   };
   render() {
+    const { match, history } = this.props;
     return (
       <div className="container">
         <header>
           <div className="left-menu">
-            <div className="logo">Market</div>
+            <Link to={`/${match.params.city}`} className="logo">
+              Market
+            </Link>
             <div className="city-dropdown" onClick={this.clickedCityDropwdown}>
               {this.state.selectedCity}{" "}
               <i

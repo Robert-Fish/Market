@@ -14,6 +14,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "browser-sync": "^2.18.8",
+    "concurrently": "^3.5.1",
     "express": "^4.16.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
@@ -46,7 +47,8 @@
     "watch": "gulp",
     "sass": "gulp styles",
     "js": "gulp webpack",
-    "server": "node server.js"
+    "server": "node server.js",
+    "deploy": "concurrently --kill-others \"npm run bundle\" \"npm run server\""
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
