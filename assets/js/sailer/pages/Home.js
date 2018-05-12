@@ -8,8 +8,6 @@ export default class Home extends Component {
       categoriesData: ""
     };
   }
-  componentWillMount() {}
-
   componentDidMount() {
     const { match, history } = this.props;
     if (match.params.city == undefined) {
@@ -74,16 +72,6 @@ export default class Home extends Component {
     }
   };
 
-  loopTags = () => {
-    let testTags = ["a", "s", "d", "f", "g", "q"];
-    return testTags.map((item, i) => {
-      return (
-        <div className="tag" key={i}>
-          Apple macbook
-        </div>
-      );
-    });
-  };
   render() {
     return (
       <div className="home">
@@ -104,7 +92,12 @@ export default class Home extends Component {
             <div className="title">
               Trending now <i className="far fa-clock" />
             </div>
-            <div className="trending-tags">{this.loopTags()} </div>
+            <div className="trending-tags">
+              <div className="tag">Toyota Corolla</div>
+              <div className="tag">Apple Macbook Pro 2015</div>
+              <div className="tag">Tesla Model X</div>
+              <div className="tag">Iphone X (Black) (128Gb)</div>
+            </div>
           </section>
         </div>
       </div>

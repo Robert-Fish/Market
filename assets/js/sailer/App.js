@@ -7,15 +7,6 @@ import Listings from "./pages/Listings";
 import Details from "./pages/Details";
 import Catergory from "./pages/Category";
 export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: "Joe"
-    };
-  }
-  clickedBtn = () => {
-    console.log("swag");
-  };
   render() {
     return (
       <Router>

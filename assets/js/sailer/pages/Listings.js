@@ -1,25 +1,6 @@
 import React, { Component } from "react";
 
 export default class Listings extends Component {
-  loopItems = () => {
-    let testarray = [1, 2, 3, 4, 5, 6, 7];
-    return testarray.map((item, i) => {
-      return (
-        <div className="item">
-          <div className="image">
-            <div className="price">$258,000</div>
-            image
-          </div>
-          <div className="details">
-            <h5>
-              Mercedes Benz AMG GT <i className="far fa-star" />
-            </h5>
-            <h6>Brisbane City, QLD</h6>
-          </div>
-        </div>
-      );
-    });
-  };
   render() {
     const { match, location, history } = this.props;
     return (
@@ -41,7 +22,52 @@ export default class Listings extends Component {
             <div className="form-group make">
               <label>Make</label>
               <select name="make" className="make">
-                <option value="bmw">bmw</option>
+                <option value="alfa-romeo">Alfa Romeo</option>
+                <option value="alpina">Alpina</option>
+                <option value="aston-martin">Aston Martin</option>
+                <option value="audi">Audi</option>
+                <option value="bentley">Bentley</option>
+                <option value="bmw">BMW</option>
+                <option value="citreon">Citroen</option>
+                <option value="dacia">Dacia</option>
+                <option value="ds">DS</option>
+                <option value="ferrari">Ferrari</option>
+                <option value="fiat">Fiat</option>
+                <option value="ford">Ford</option>
+                <option value="holden">Holden</option>
+                <option value="honda">Honda</option>
+                <option value="hyundai">Hyundai</option>
+                <option value="infiniti">Infiniti</option>
+                <option value="jaguar">Jaguar</option>
+                <option value="jeep">Jeep</option>
+                <option value="kia">Kia</option>
+                <option value="lamborghini">Lamborghini</option>
+                <option value="land-rover">Land Rover</option>
+                <option value="lexus">Lexus</option>
+                <option value="lotus">Lotus</option>
+                <option value="maserati">Maserati</option>
+                <option value="mazda">Mazda</option>
+                <option value="mclaren">McLaren</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="mg">MG</option>
+                <option value="mini">Mini</option>
+                <option value="mitsubishi">Mitsubishi</option>
+                <option value="nissan">Nissan</option>
+                <option value="peugeot">Peugeot</option>
+                <option value="porsche">Porsche</option>
+                <option value="renault">Renault</option>
+                <option value="rolls-royce">Rolls-Royce</option>
+                <option value="seat">Seat</option>
+                <option value="skoda">Skoda</option>
+                <option value="smart">Smart</option>
+                <option value="ssangyong">SsangYong</option>
+                <option value="subaru">Subaru</option>
+                <option value="suzuki">Suzuki</option>
+                <option value="tesla">Tesla</option>
+                <option value="toyota">Toyota</option>
+                <option value="vauxhall">Vauxhall</option>
+                <option value="volkswagen">Volkswagen</option>
+                <option value="volvo">Volvo</option>
               </select>
             </div>
 

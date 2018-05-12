@@ -56,16 +56,7 @@ var App = function (_Component) {
   function App() {
     _classCallCheck(this, App);
 
-    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
-
-    _this.clickedBtn = function () {
-      console.log("swag");
-    };
-
-    _this.state = {
-      name: "Joe"
-    };
-    return _this;
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
   }
 
   _createClass(App, [{
@@ -380,13 +371,233 @@ var Category = function (_Component) {
               { name: "make", className: "make", onChange: _this.handleChange },
               _react2.default.createElement(
                 "option",
-                { value: "bmw" },
-                "bmw"
+                { value: "alfa-romeo" },
+                "Alfa Romeo"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "alpina" },
+                "Alpina"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "aston-martin" },
+                "Aston Martin"
               ),
               _react2.default.createElement(
                 "option",
                 { value: "audi" },
-                "audi"
+                "Audi"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "bentley" },
+                "Bentley"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "bmw" },
+                "BMW"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "citreon" },
+                "Citroen"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "dacia" },
+                "Dacia"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "ds" },
+                "DS"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "ferrari" },
+                "Ferrari"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "fiat" },
+                "Fiat"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "ford" },
+                "Ford"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "holden" },
+                "Holden"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "honda" },
+                "Honda"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "hyundai" },
+                "Hyundai"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "infiniti" },
+                "Infiniti"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "jaguar" },
+                "Jaguar"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "jeep" },
+                "Jeep"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "kia" },
+                "Kia"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "lamborghini" },
+                "Lamborghini"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "land-rover" },
+                "Land Rover"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "lexus" },
+                "Lexus"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "lotus" },
+                "Lotus"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "maserati" },
+                "Maserati"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "mazda" },
+                "Mazda"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "mclaren" },
+                "McLaren"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "mercedes" },
+                "Mercedes"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "mg" },
+                "MG"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "mini" },
+                "Mini"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "mitsubishi" },
+                "Mitsubishi"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "nissan" },
+                "Nissan"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "peugeot" },
+                "Peugeot"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "porsche" },
+                "Porsche"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "renault" },
+                "Renault"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "rolls-royce" },
+                "Rolls-Royce"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "seat" },
+                "Seat"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "skoda" },
+                "Skoda"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "smart" },
+                "Smart"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "ssangyong" },
+                "SsangYong"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "subaru" },
+                "Subaru"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "suzuki" },
+                "Suzuki"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "tesla" },
+                "Tesla"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "toyota" },
+                "Toyota"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "vauxhall" },
+                "Vauxhall"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "volkswagen" },
+                "Volkswagen"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "volvo" },
+                "Volvo"
               )
             )
           ),
@@ -403,13 +614,98 @@ var Category = function (_Component) {
               { name: "model", className: "model", onChange: _this.handleChange },
               _react2.default.createElement(
                 "option",
-                { value: "2008" },
+                { value: "2018" },
+                "2018"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "2007" },
+                "2017"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "2007" },
+                "2016"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "2007" },
+                "2015"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "2007" },
+                "2014"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "2007" },
+                "2013"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "2007" },
+                "2012"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "2007" },
+                "2011"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "2007" },
+                "2010"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "2007" },
+                "2009"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "2007" },
                 "2008"
               ),
               _react2.default.createElement(
                 "option",
                 { value: "2007" },
                 "2007"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "2007" },
+                "2006"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "2007" },
+                "2005"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "2007" },
+                "2004"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "2007" },
+                "2003"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "2007" },
+                "2002"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "2007" },
+                "2001"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "2007" },
+                "2000"
               )
             )
           )
@@ -421,9 +717,7 @@ var Category = function (_Component) {
       var name = event.target.name;
       var value = event.target.type == "checkbox" ? event.target.checked : event.target.value;
 
-      _this.setState(_defineProperty({}, name, value), function () {
-        console.log(_this.state);
-      });
+      _this.setState(_defineProperty({}, name, value), function () {});
     };
 
     _this.submitFilters = function () {
@@ -991,17 +1285,6 @@ var Home = function (_Component) {
       }
     };
 
-    _this.loopTags = function () {
-      var testTags = ["a", "s", "d", "f", "g", "q"];
-      return testTags.map(function (item, i) {
-        return _react2.default.createElement(
-          "div",
-          { className: "tag", key: i },
-          "Apple macbook"
-        );
-      });
-    };
-
     _this.state = {
       categoriesData: ""
     };
@@ -1009,9 +1292,6 @@ var Home = function (_Component) {
   }
 
   _createClass(Home, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {}
-  }, {
     key: "componentDidMount",
     value: function componentDidMount() {
       var _props = this.props,
@@ -1071,8 +1351,26 @@ var Home = function (_Component) {
             _react2.default.createElement(
               "div",
               { className: "trending-tags" },
-              this.loopTags(),
-              " "
+              _react2.default.createElement(
+                "div",
+                { className: "tag" },
+                "Toyota Corolla"
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "tag" },
+                "Apple Macbook Pro 2015"
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "tag" },
+                "Tesla Model X"
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "tag" },
+                "Iphone X (Black) (128Gb)"
+              )
             )
           )
         )
@@ -1115,50 +1413,9 @@ var Listings = function (_Component) {
   _inherits(Listings, _Component);
 
   function Listings() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
     _classCallCheck(this, Listings);
 
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Listings.__proto__ || Object.getPrototypeOf(Listings)).call.apply(_ref, [this].concat(args))), _this), _this.loopItems = function () {
-      var testarray = [1, 2, 3, 4, 5, 6, 7];
-      return testarray.map(function (item, i) {
-        return _react2.default.createElement(
-          "div",
-          { className: "item" },
-          _react2.default.createElement(
-            "div",
-            { className: "image" },
-            _react2.default.createElement(
-              "div",
-              { className: "price" },
-              "$258,000"
-            ),
-            "image"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "details" },
-            _react2.default.createElement(
-              "h5",
-              null,
-              "Mercedes Benz AMG GT ",
-              _react2.default.createElement("i", { className: "far fa-star" })
-            ),
-            _react2.default.createElement(
-              "h6",
-              null,
-              "Brisbane City, QLD"
-            )
-          )
-        );
-      });
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+    return _possibleConstructorReturn(this, (Listings.__proto__ || Object.getPrototypeOf(Listings)).apply(this, arguments));
   }
 
   _createClass(Listings, [{
@@ -1222,8 +1479,233 @@ var Listings = function (_Component) {
                 { name: "make", className: "make" },
                 _react2.default.createElement(
                   "option",
+                  { value: "alfa-romeo" },
+                  "Alfa Romeo"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "alpina" },
+                  "Alpina"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "aston-martin" },
+                  "Aston Martin"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "audi" },
+                  "Audi"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "bentley" },
+                  "Bentley"
+                ),
+                _react2.default.createElement(
+                  "option",
                   { value: "bmw" },
-                  "bmw"
+                  "BMW"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "citreon" },
+                  "Citroen"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "dacia" },
+                  "Dacia"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "ds" },
+                  "DS"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "ferrari" },
+                  "Ferrari"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "fiat" },
+                  "Fiat"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "ford" },
+                  "Ford"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "holden" },
+                  "Holden"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "honda" },
+                  "Honda"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "hyundai" },
+                  "Hyundai"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "infiniti" },
+                  "Infiniti"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "jaguar" },
+                  "Jaguar"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "jeep" },
+                  "Jeep"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "kia" },
+                  "Kia"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "lamborghini" },
+                  "Lamborghini"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "land-rover" },
+                  "Land Rover"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "lexus" },
+                  "Lexus"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "lotus" },
+                  "Lotus"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "maserati" },
+                  "Maserati"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "mazda" },
+                  "Mazda"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "mclaren" },
+                  "McLaren"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "mercedes" },
+                  "Mercedes"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "mg" },
+                  "MG"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "mini" },
+                  "Mini"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "mitsubishi" },
+                  "Mitsubishi"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "nissan" },
+                  "Nissan"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "peugeot" },
+                  "Peugeot"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "porsche" },
+                  "Porsche"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "renault" },
+                  "Renault"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "rolls-royce" },
+                  "Rolls-Royce"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "seat" },
+                  "Seat"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "skoda" },
+                  "Skoda"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "smart" },
+                  "Smart"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "ssangyong" },
+                  "SsangYong"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "subaru" },
+                  "Subaru"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "suzuki" },
+                  "Suzuki"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "tesla" },
+                  "Tesla"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "toyota" },
+                  "Toyota"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "vauxhall" },
+                  "Vauxhall"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "volkswagen" },
+                  "Volkswagen"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "volvo" },
+                  "Volvo"
                 )
               )
             ),

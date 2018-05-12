@@ -88,16 +88,77 @@ export default class Category extends Component {
           <div className="form-group make">
             <label>Make</label>
             <select name="make" className="make" onChange={this.handleChange}>
-              <option value="bmw">bmw</option>
-              <option value="audi">audi</option>
+              <option value="alfa-romeo">Alfa Romeo</option>
+              <option value="alpina">Alpina</option>
+              <option value="aston-martin">Aston Martin</option>
+              <option value="audi">Audi</option>
+              <option value="bentley">Bentley</option>
+              <option value="bmw">BMW</option>
+              <option value="citreon">Citroen</option>
+              <option value="dacia">Dacia</option>
+              <option value="ds">DS</option>
+              <option value="ferrari">Ferrari</option>
+              <option value="fiat">Fiat</option>
+              <option value="ford">Ford</option>
+              <option value="holden">Holden</option>
+              <option value="honda">Honda</option>
+              <option value="hyundai">Hyundai</option>
+              <option value="infiniti">Infiniti</option>
+              <option value="jaguar">Jaguar</option>
+              <option value="jeep">Jeep</option>
+              <option value="kia">Kia</option>
+              <option value="lamborghini">Lamborghini</option>
+              <option value="land-rover">Land Rover</option>
+              <option value="lexus">Lexus</option>
+              <option value="lotus">Lotus</option>
+              <option value="maserati">Maserati</option>
+              <option value="mazda">Mazda</option>
+              <option value="mclaren">McLaren</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="mg">MG</option>
+              <option value="mini">Mini</option>
+              <option value="mitsubishi">Mitsubishi</option>
+              <option value="nissan">Nissan</option>
+              <option value="peugeot">Peugeot</option>
+              <option value="porsche">Porsche</option>
+              <option value="renault">Renault</option>
+              <option value="rolls-royce">Rolls-Royce</option>
+              <option value="seat">Seat</option>
+              <option value="skoda">Skoda</option>
+              <option value="smart">Smart</option>
+              <option value="ssangyong">SsangYong</option>
+              <option value="subaru">Subaru</option>
+              <option value="suzuki">Suzuki</option>
+              <option value="tesla">Tesla</option>
+              <option value="toyota">Toyota</option>
+              <option value="vauxhall">Vauxhall</option>
+              <option value="volkswagen">Volkswagen</option>
+              <option value="volvo">Volvo</option>
             </select>
           </div>
 
           <div className="form-group model">
             <label>Model</label>
             <select name="model" className="model" onChange={this.handleChange}>
-              <option value="2008">2008</option>
+              <option value="2018">2018</option>
+              <option value="2007">2017</option>
+              <option value="2007">2016</option>
+              <option value="2007">2015</option>
+              <option value="2007">2014</option>
+              <option value="2007">2013</option>
+              <option value="2007">2012</option>
+              <option value="2007">2011</option>
+              <option value="2007">2010</option>
+              <option value="2007">2009</option>
+              <option value="2007">2008</option>
               <option value="2007">2007</option>
+              <option value="2007">2006</option>
+              <option value="2007">2005</option>
+              <option value="2007">2004</option>
+              <option value="2007">2003</option>
+              <option value="2007">2002</option>
+              <option value="2007">2001</option>
+              <option value="2007">2000</option>
             </select>
           </div>
         </div>
@@ -116,9 +177,7 @@ export default class Category extends Component {
       {
         [name]: value
       },
-      () => {
-        console.log(this.state);
-      }
+      () => {}
     );
   };
 
