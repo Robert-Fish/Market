@@ -15,7 +15,6 @@ export default class Category extends Component {
   componentWillMount() {
     const { match, history } = this.props;
     const self = this;
-
     const queryParams = qs.parse(this.props.location.search);
     const { min_price, max_price, sort, select_view } = queryParams;
     if (queryParams.min_price != undefined) {
