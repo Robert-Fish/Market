@@ -28,7 +28,7 @@ var _Home = __webpack_require__(147);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _reactRouterDom = __webpack_require__(66);
+var _reactRouterDom = __webpack_require__(112);
 
 var _Listings = __webpack_require__(148);
 
@@ -95,187 +95,9 @@ exports.default = App;
 /***/ }),
 
 /***/ 144:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(5);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _axios = __webpack_require__(41);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-var _reactRouterDom = __webpack_require__(66);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Header = function (_Component) {
-  _inherits(Header, _Component);
-
-  function Header() {
-    _classCallCheck(this, Header);
-
-    var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this));
-
-    _this.selectCity = function (city) {
-      _this.setState({
-        selectedCity: city
-      }, function () {
-        var city = _this.state.citiesData.filter(function (item) {
-          return item.title == _this.state.selectedCity;
-        });
-        var _this$props = _this.props,
-            match = _this$props.match,
-            history = _this$props.history;
-
-        history.push("/" + city[0].slug);
-      });
-    };
-
-    _this.loopCities = function () {
-      var self = _this;
-      return _this.state.citiesData.map(function (item, i) {
-        return _react2.default.createElement(
-          "li",
-          { key: i, onClick: _this.selectCity.bind(null, item.title) },
-          item.title
-        );
-      });
-    };
-
-    _this.clickedCityDropwdown = function () {
-      _this.setState({
-        cityDropdown: !_this.state.cityDropdown
-      });
-    };
-
-    _this.onHoverBtn = function () {
-      _this.setState({
-        lover: 'I love Taite'
-      });
-    };
-
-    _this.onHoverBtnTwo = function () {
-      _this.setState({
-        lover: 'Post Ad'
-      });
-    };
-
-    _this.state = {
-      cityDropdown: false,
-      selectedCity: "Brisbane",
-      citiesData: [],
-      lover: "Post Ad"
-    };
-    return _this;
-  }
-
-  _createClass(Header, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {
-      var self = this;
-      _axios2.default.get("/api/cities").then(function (response) {
-        var _self$props = self.props,
-            match = _self$props.match,
-            history = _self$props.history;
-
-        var city = response.data.filter(function (item) {
-          return item.slug == match.params.city;
-        });
-        self.setState({
-          citiesData: response.data,
-          selectedCity: city[0].title
-        }, function () {});
-      }).catch(function (error) {
-        console.log(error);
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _props = this.props,
-          match = _props.match,
-          history = _props.history;
-
-      return _react2.default.createElement(
-        "div",
-        { className: "container" },
-        _react2.default.createElement(
-          "header",
-          null,
-          _react2.default.createElement(
-            "div",
-            { className: "left-menu" },
-            _react2.default.createElement(
-              _reactRouterDom.Link,
-              { to: "/" + match.params.city, className: "logo" },
-              "Market"
-            ),
-            _react2.default.createElement(
-              "div",
-              { className: "city-dropdown", onClick: this.clickedCityDropwdown },
-              this.state.selectedCity,
-              " ",
-              _react2.default.createElement("i", {
-                className: "fas fa-chevron-down " + (this.state.cityDropdown ? "fa-chevron-up" : "")
-              }),
-              _react2.default.createElement(
-                "div",
-                {
-                  className: "scroll-area " + (this.state.cityDropdown ? "active" : "")
-                },
-                _react2.default.createElement(
-                  "ul",
-                  null,
-                  this.loopCities()
-                )
-              )
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "right-menu" },
-            _react2.default.createElement(
-              "div",
-              { className: "user-img" },
-              _react2.default.createElement("i", { className: "fas fa-user-circle" })
-            ),
-            _react2.default.createElement(
-              "div",
-              { className: "user-dropdown" },
-              "My Account ",
-              _react2.default.createElement("i", { className: "fas fa-angle-down" })
-            ),
-            _react2.default.createElement(
-              "div",
-              { className: "post-btn", onMouseEnter: this.onHoverBtn, onMouseLeave: this.onHoverBtnTwo },
-              this.state.lover
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return Header;
-}(_react.Component);
-
-exports.default = Header;
+throw new Error("Module build failed: SyntaxError: C:/Users/Robert/Documents/PersonalProjects/Market-master/assets/js/sailer/Header.js: Unexpected token (10:0)\n\n   8 |       cityDropdown: false,\n   9 |       selectedCity: \"Brisbane\",\n> 10 | <<<<<<< HEAD\n     | ^\n  11 |       citiesData: [],\n  12 |       lover: \"Post Ad\"\n  13 | =======\n");
 
 /***/ }),
 
@@ -295,7 +117,7 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _axios = __webpack_require__(41);
+var _axios = __webpack_require__(69);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -1231,11 +1053,11 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _axios = __webpack_require__(41);
+var _axios = __webpack_require__(69);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _reactRouterDom = __webpack_require__(66);
+var _reactRouterDom = __webpack_require__(112);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

@@ -7,8 +7,12 @@ export default class Header extends Component {
     this.state = {
       cityDropdown: false,
       selectedCity: "Brisbane",
+<<<<<<< HEAD
       citiesData: [],
       lover: "Post Ad"
+=======
+      citiesData: []
+>>>>>>> 19e4aa582735747e2b62bb191385e4e5737734b9
     };
   }
 
@@ -63,6 +67,7 @@ export default class Header extends Component {
       cityDropdown: !this.state.cityDropdown
     });
   };
+<<<<<<< HEAD
 
   onHoverBtn = () => {
     this.setState({
@@ -75,6 +80,8 @@ export default class Header extends Component {
     lover: 'Post Ad'
     })
   }
+=======
+>>>>>>> 19e4aa582735747e2b62bb191385e4e5737734b9
   render() {
     const { match, history } = this.props;
     return (
@@ -108,7 +115,11 @@ export default class Header extends Component {
             <div className="user-dropdown">
               My Account <i className="fas fa-angle-down" />
             </div>
+<<<<<<< HEAD
             <div className="post-btn" onMouseEnter={this.onHoverBtn} onMouseLeave={this.onHoverBtnTwo}>{this.state.lover}</div>
+=======
+            <div className="post-btn">Post Ad</div>
+>>>>>>> 19e4aa582735747e2b62bb191385e4e5737734b9
           </div>
         </header>
       </div>
