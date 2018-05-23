@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
+@import "reset";
+@import "home";
+@import "listings";
+@import "details";
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-image: linear-gradient(
+      135deg,
+      rgba(75, 177, 182, 0.7) 0%,
+      rgba(102, 25, 179, 0.7) 100%
+    ),
+    url("https://suitcasemag.com/wp-content/uploads/2017/01/brisbane-australia.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100vh;
+}
+
+header {
+  padding: 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  .left-menu {
+    display: flex;
+    .logo {
+      font-size: 2rem;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      color: white;
+      font-weight: 300;
+      text-decoration: none;
+      transition: all ease-in-out 0.3s;
+      &:hover {
+        color: rgb(102, 25, 179);
+      }
+    }
+    .city-dropdown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.25rem;
+      padding: 15px 20px;
+      color: white;
+      font-weight: 200;
+      position: relative;
+      cursor: pointer;
+
+      .scroll-area {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.5);
+        top: 35px;
+        min-width: 150px;
+        left: 0;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+        z-index: 5;
+
+        &.active {
+          visibility: visible;
+          top: 50px;
+          opacity: 1;
+        }
+        // padding: 15px;
+        ul {
+          li {
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+              background: rgba(75, 177, 182, 0.5);
+            }
+          }
+        }
+      }
+
+      i {
+        padding-left: 5px;
+      }
+    }
+  }
+
+  .right-menu {
+    display: flex;
+    .user-img {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      font-size: 1.75rem;
+      color: white;
+
+      .fa-user-circle {
+        font-size: 2.35rem;
+        padding: 0;
+        margin: -1px 0 0 0;
+      }
+    }
+
+    .user-dropdown {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      padding: 15px 20px;
+      color: white;
+
+      i {
+        padding-left: 10px;
+      }
+    }
+
+    .post-btn {
+      margin-top: 3px;
+      padding: 15px 30px;
+      background: black;
+      font-weight: 300;
+      color: white;
+      text-transform: capitalize;
+      vertical-align: center;
+
+      
+    }
+  }
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
